@@ -110,6 +110,6 @@ header > h1{
 }
 @media screen and (max-width: 786px) {
   header, .result, .choices, .action-message {
-    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+    width: 100%;
   }
 }
