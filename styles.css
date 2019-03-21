@@ -119,7 +119,9 @@ header > h1{
 	display: none;
 }
 
-#reset{
+#reset-button{
+	padding: 10px;
+	margin: 10px;
 	display: inline-block;
 	background: green;
 	border: 4px solid green;
