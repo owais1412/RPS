@@ -1,5 +1,6 @@
 let userScore = 0;
 let computerScore = 0;
+// Targeting and fetching elements from HTML DOM
 const userScore_span =  document.getElementById("user-score");
 const computerScore_span =  document.getElementById("computer-score");
 const scoreBoard_div = document.querySelector(".score-board");
@@ -10,17 +11,21 @@ const rock_div = document.getElementById("r");
 const paper_div = document.getElementById("p");
 const scissors_div = document.getElementById("s");
 
+// Getting computer Choice
 function getComputerChoice(){
 	const choices = ['r', 'p', 's'];
 	const randomNumber = Math.floor(Math.random() * 3);
 	return choices[randomNumber];
 }
 
+// Converting to Words
 function convertToWord(letter){
 	if (letter == "r") return "Rock";
 	if (letter == "p") return "Paper";
 	return "Scissors";
 }
+
+// Checking Score
 function check(){
 	if(userScore == 5){
 		choices_div.classList.add('block');
@@ -36,6 +41,7 @@ function check(){
 	}
 }
 
+// Getting result for winning
 function win(userChoice, computerChoice){
 	const smallUserWord = "user".fontsize(3).sub();
 	const smallCompWord = "comp".fontsize(3).sub();
@@ -49,6 +55,7 @@ function win(userChoice, computerChoice){
 	check();
 }
 
+// Getting result for losing
 function lose(userChoice, computerChoice){
 	const smallUserWord = "user".fontsize(3).sub();
 	const smallCompWord = "comp".fontsize(3).sub();
@@ -71,6 +78,7 @@ function draw(userChoice, computerChoice){
 	setTimeout(() => userChoice_div.classList.remove('gray-glow'), 300);
 }
 
+// Driver Function
 function game(userChoice){
 	const computerChoice = getComputerChoice();
 	switch(userChoice + computerChoice){
@@ -92,6 +100,7 @@ function game(userChoice){
 	}
 }
 
+// Main Function
 function main(){
 	rock_div.addEventListener("click", function(){
 		game("r");	
